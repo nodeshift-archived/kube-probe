@@ -13,6 +13,8 @@ script:
    - npm run ci
 # Only the node version 8 job will upload the lockfile
 after_script: greenkeeper-lockfile-upload
+notifications:
+  irc: "irc.freenode.org#brass-monkey"
 branches:
   only:
     - master
