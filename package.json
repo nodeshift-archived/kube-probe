@@ -1,5 +1,7 @@
 {
   "name": "kube-probe",
+  "version": "0.0.1",
+  "description": "Express middleware that sets up generic liveness and readiness probes for Openshift/Kubernetes",
   "author": "Red Hat, Inc.",
   "license": "Apache-2.0",
   "scripts": {
