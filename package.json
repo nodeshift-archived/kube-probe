@@ -1,0 +1,48 @@
+{
+  "name": "kube-probe",
+  "author": "Red Hat, Inc.",
+  "license": "Apache-2.0",
+  "scripts": {
+    "test": "tape test/*.js | tap-spec",
+    "lint": "eslint test/*.js index.js",
+    "prepare": "nsp check",
+    "coverage": "nyc npm test",
+    "coveralls": "nyc npm test && nyc report --reporter=text-lcov | coveralls",
+    "ci": "npm run lint && npm run coveralls",
+    "dependencyCheck": "szero . --ci",
+    "release": "standard-version"
+  },
+  "files": [
+    "package.json",
+    "index.js",
+    "LICENSE"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/bucharest-gold/kube-probe.git"
+  },
+  "bugs": {
+    "url": "https://github.com/bucharest-gold/kube-probe/issues"
+  },
+  "homepage": "https://github.com/bucharest-gold/kube-probe",
+  "devDependencies": {
+    "coveralls": "^2.13.1",
+    "eslint": "~4.3.0",
+    "eslint-config-semistandard": "~11.0.0",
+    "eslint-config-standard": "~10.2.1",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-node": "^5.1.1",
+    "eslint-plugin-promise": "~3.5.0",
+    "eslint-plugin-react": "~7.1.0",
+    "eslint-plugin-standard": "~3.0.1",
+    "express": "^4.15.4",
+    "nodeshift": "^0.4.0",
+    "nsp": "~2.7.0",
+    "nyc": "~11.1.0",
+    "standard-version": "^4.2.0",
+    "supertest": "^3.0.0",
+    "szero": "^1.0.0",
+    "tap-spec": "~4.1.1",
+    "tape": "~4.8.0"
+  }
+}
