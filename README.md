@@ -16,6 +16,8 @@ This will add 2 `GET` endpoints `/api/health/liveness` and `/api/health/readines
 
 #### Parameters
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/bucharest-gold/kube-probe.svg)](https://greenkeeper.io/)
+
 * app - an instance of express - required
 
 * options - optional
