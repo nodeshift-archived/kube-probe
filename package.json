@@ -28,7 +28,7 @@
   },
   "homepage": "https://github.com/bucharest-gold/kube-probe",
   "devDependencies": {
-    "coveralls": "^2.13.1",
+    "coveralls": "^3.0.0",
     "eslint": "~4.7.0",
     "eslint-config-semistandard": "~11.0.0",
     "eslint-config-standard": "~10.2.1",
