@@ -39,7 +39,7 @@
     "eslint-plugin-standard": "~3.0.1",
     "express": "^4.15.4",
     "nsp": "~2.8.0",
-    "nyc": "~11.2.1",
+    "nyc": "~11.3.0",
     "standard-version": "^4.2.0",
     "supertest": "^3.0.0",
     "szero": "^1.0.0",
