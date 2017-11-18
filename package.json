@@ -35,7 +35,7 @@
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-node": "^5.1.1",
     "eslint-plugin-promise": "~3.6.0",
-    "eslint-plugin-react": "~7.4.0",
+    "eslint-plugin-react": "~7.5.0",
     "eslint-plugin-standard": "~3.0.1",
     "express": "^4.15.4",
     "nsp": "~3.1.0",
