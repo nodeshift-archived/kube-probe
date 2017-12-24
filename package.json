@@ -29,7 +29,7 @@
   "homepage": "https://github.com/bucharest-gold/kube-probe",
   "devDependencies": {
     "coveralls": "^3.0.0",
-    "eslint": "~4.13.0",
+    "eslint": "~4.14.0",
     "eslint-config-semistandard": "~12.0.0",
     "eslint-config-standard": "~11.0.0-beta.0",
     "eslint-plugin-import": "^2.7.0",
@@ -39,7 +39,7 @@
     "eslint-plugin-standard": "~3.0.1",
     "express": "^4.15.4",
     "nsp": "~3.1.0",
-    "nyc": "~11.3.0",
+    "nyc": "~11.4.1",
     "standard-version": "^4.2.0",
     "supertest": "^3.0.0",
     "szero": "^1.0.0",
