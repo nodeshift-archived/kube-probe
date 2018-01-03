@@ -1,7 +1,7 @@
 {
   "name": "kube-probe",
   "version": "0.1.2",
-  "description": "Express middleware that sets up generic liveness and readiness probes for Openshift/Kubernetes",
+  "description": "connect.js middleware that sets up generic liveness and readiness probes for Openshift/Kubernetes",
   "author": "Red Hat, Inc.",
   "license": "Apache-2.0",
   "scripts": {
@@ -26,8 +26,20 @@
   "bugs": {
     "url": "https://github.com/bucharest-gold/kube-probe/issues"
   },
+  "keywords": [
+    "connect",
+    "connect.js",
+    "express",
+    "express.js",
+    "middleware",
+    "kubernetes",
+    "openshift",
+    "liveness",
+    "readiness"
+  ],
   "homepage": "https://github.com/bucharest-gold/kube-probe",
   "devDependencies": {
+    "connect": "~3.6.5",
     "coveralls": "^3.0.0",
     "eslint": "~4.14.0",
     "eslint-config-semistandard": "~12.0.0",
@@ -37,7 +49,6 @@
     "eslint-plugin-promise": "~3.6.0",
     "eslint-plugin-react": "~7.5.1",
     "eslint-plugin-standard": "~3.0.1",
-    "express": "^4.15.4",
     "nsp": "~3.1.0",
     "nyc": "~11.4.1",
     "standard-version": "^4.2.0",

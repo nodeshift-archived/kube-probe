@@ -3,11 +3,11 @@
 const test = require('tape');
 const supertest = require('supertest');
 
-const express = require('express');
+const connect = require('connect');
 const probe = require('../');
 
 test('test defaults for readiness', (t) => {
-  const app = express();
+  const app = connect();
   probe(app);
 
   supertest(app)
@@ -20,7 +20,7 @@ test('test defaults for readiness', (t) => {
 });
 
 test('test defaults for liveness', (t) => {
-  const app = express();
+  const app = connect();
   probe(app);
 
   supertest(app)
@@ -33,11 +33,11 @@ test('test defaults for liveness', (t) => {
 });
 
 test('test different url and callback for readiness', (t) => {
-  const app = express();
+  const app = connect();
   const options = {
     readinessURL: '/different/api/ready',
     readinessCallback: (request, response) => {
-      return response.send('Different Callback');
+      return response.end('Different Callback');
     }
   };
 
@@ -53,11 +53,11 @@ test('test different url and callback for readiness', (t) => {
 });
 
 test('test different url and callback for liveness', (t) => {
-  const app = express();
+  const app = connect();
   const options = {
     livenessURL: '/different/api/ready',
     livenessCallback: (request, response) => {
-      return response.send('Different Callback');
+      return response.end('Different Callback');
     }
   };
 
