@@ -1,5 +1,7 @@
 'use strict';
 
+const protection = require('overload-protection');
+
 const READINESS_URL = '/api/health/readiness';
 const LIVENESS_URL = '/api/health/liveness';
 
@@ -14,8 +16,20 @@ function defaultResponse (request, response) {
   @param {string} [options.livenessURL] - url where the liveness probe is located
   @param {function} [options.readinessCallback] - function to call when the readiness probe is triggered
   @param {function} [options.livenessCallback] - function to call when the liveness probe is triggered
+  @param {object} [options.protectionConfig] - options passed directly to 'overload-protection' module
 */
 module.exports = function (app, options = {}) {
-  app.use(options.readinessURL || READINESS_URL, options.readinessCallback || defaultResponse);
-  app.use(options.livenessURL || LIVENESS_URL, options.livenessCallback || defaultResponse);
+  const protectCfg = Object.assign({
+    production: process.env.NODE_ENV === 'production',
+    maxHeapUsedBytes: 0, // maximum heap used threshold (0 to disable) [default 0]
+    maxRssBytes: 0 // maximum rss size threshold (0 to disable) [default 0]
+  }, options.protectionConfig);
+  const readiness = options.readinessURL || READINESS_URL;
+  const liveness = options.livenessURL || LIVENESS_URL;
+  const protect = protection('http', protectCfg);
+
+  app.use(readiness, protect);
+  app.use(readiness, options.readinessCallback || defaultResponse);
+  app.use(liveness, options.livenessCallback || defaultResponse);
+  app.use(liveness, protect);
 };
