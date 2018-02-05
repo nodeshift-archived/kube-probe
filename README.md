@@ -13,7 +13,12 @@ Example Usage:
 
 
 This will add 2 `GET` endpoints `/api/health/liveness` and `/api/health/readiness`
-that will return a `200 OK` response.
+that will return a `200 OK` response. This module uses `overload-protection` to identify
+when a process may be overloaded, and will return `HTTP 503 Service Unavailable`
+if the service becomes too heavily loaded. Configuration of the `protection-config` module
+may be passed as `options.protectionConfig`.
+
+See: https://github.com/davidmarkclements/overload-protection/
 
 #### Parameters
 
@@ -26,3 +31,4 @@ that will return a `200 OK` response.
 * options.livenessURLURL - string - url where the livenessURL probe is located
 * options.readinessCallback - function - function to call when the readiness probe is triggered
 * options.livenessCallback - function - function to call when the liveness probe is triggered
+* options.protectionConfig - object - options passed direction to `overload-protection`
