@@ -26,8 +26,10 @@ module.exports = function (app, options = {}) {
   };
   const readiness = options.readinessURL || READINESS_URL;
   const liveness = options.livenessURL || LIVENESS_URL;
-  app.use(readiness, protection('http', protectCfg));
+  const protect = protection('http', protectCfg);
+
+  app.use(readiness, protect);
   app.use(readiness, options.readinessCallback || defaultResponse);
   app.use(liveness, options.livenessCallback || defaultResponse);
-  app.use(liveness, protection('http', protectCfg));
+  app.use(liveness, protect);
 };
