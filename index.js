@@ -6,6 +6,7 @@ const READINESS_URL = '/api/health/readiness';
 const LIVENESS_URL = '/api/health/liveness';
 
 function defaultResponse (request, response) {
+  response.setHeader('Content-Type', 'text/html');
   return response.end('OK');
 }
 
