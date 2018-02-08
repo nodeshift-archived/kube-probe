@@ -118,3 +118,22 @@ test('custom content type for liveness endpoint', t => {
       t.end();
     });
 });
+
+test('custom content type for liveness endpoint', t => {
+  t.plan(1);
+  const app = connect();
+  probe(app, {
+    livenessCallback: (request, response) => {
+      response.setHeader('Content-Type', 'application/json');
+      response.end(JSON.stringify({status: 'OK'}));
+    }
+  });
+  supertest(app)
+    .get('/api/health/liveness')
+    .expect(200)
+    .expect('Content-Type', /json/)
+    .then(response => {
+      t.strictEqual(response.body.status, 'OK', 'expected response');
+      t.end();
+    });
+});
