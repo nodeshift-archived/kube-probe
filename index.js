@@ -23,14 +23,17 @@ module.exports = function (app, options = {}) {
   const protectCfg = Object.assign({
     production: process.env.NODE_ENV === 'production',
     maxHeapUsedBytes: 0, // maximum heap used threshold (0 to disable) [default 0]
-    maxRssBytes: 0 // maximum rss size threshold (0 to disable) [default 0]
+    maxRssBytes: 0, // maximum rss size threshold (0 to disable) [default 0]
+    enabled: true // user can set 'enabled' to false to turn this off
   }, options.protectionConfig);
   const readiness = options.readinessURL || READINESS_URL;
   const liveness = options.livenessURL || LIVENESS_URL;
   const protect = protection('http', protectCfg);
 
-  app.use(readiness, protect);
+  if (protectCfg.enabled === true) {
+    app.use(readiness, protect);
+    app.use(liveness, protect);
+  }
   app.use(readiness, options.readinessCallback || defaultResponse);
   app.use(liveness, options.livenessCallback || defaultResponse);
-  app.use(liveness, protect);
 };
