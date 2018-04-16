@@ -22,8 +22,8 @@ function defaultResponse (request, response) {
 module.exports = function (app, options = {}) {
   const protectCfg = Object.assign({
     production: process.env.NODE_ENV === 'production',
-    maxHeapUsedBytes: 0, // maximum heap used threshold (0 to disable) [default 0]
-    maxRssBytes: 0 // maximum rss size threshold (0 to disable) [default 0]
+    maxHeapUsedBytes: 0, // Maximum heap used threshold (0 to disable) [default 0]
+    maxRssBytes: 0 // Maximum rss size threshold (0 to disable) [default 0]
   }, options.protectionConfig);
   const readiness = options.readinessURL || READINESS_URL;
   const liveness = options.livenessURL || LIVENESS_URL;
