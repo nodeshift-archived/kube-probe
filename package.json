@@ -57,7 +57,7 @@
     "szero": "^1.0.0",
     "tap-spec": "~5.0.0",
     "tape": "~4.9.0",
-    "xo": "~0.21.0"
+    "xo": "~0.22.0"
   },
   "dependencies": {
     "overload-protection": "~1.1.0"
