@@ -30,10 +30,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/bucharest-gold/kube-probe.git"
+    "url": "git://github.com/nodeshift/kube-probe.git"
   },
   "bugs": {
-    "url": "https://github.com/bucharest-gold/kube-probe/issues"
+    "url": "https://github.com/nodeshift/kube-probe/issues"
   },
   "keywords": [
     "connect",
@@ -46,7 +46,7 @@
     "liveness",
     "readiness"
   ],
-  "homepage": "https://github.com/bucharest-gold/kube-probe",
+  "homepage": "https://github.com/nodeshift/kube-probe",
   "devDependencies": {
     "connect": "~3.6.5",
     "coveralls": "^3.0.0",
