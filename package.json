@@ -54,7 +54,7 @@
     "supertest": "^3.0.0",
     "szero": "^1.0.0",
     "tap-spec": "~5.0.0",
-    "tape": "~4.9.0",
+    "tape": "~4.10.0",
     "xo": "~0.24.0"
   },
   "dependencies": {
