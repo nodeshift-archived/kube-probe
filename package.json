@@ -10,7 +10,6 @@
     "coverage": "nyc npm test",
     "coveralls": "nyc npm test && nyc report --reporter=text-lcov | coveralls",
     "ci": "npm run lint && npm run coveralls",
-    "dependencyCheck": "szero . --ci",
     "release": "standard-version"
   },
   "xo": {
@@ -52,7 +51,6 @@
     "nyc": "~14.0.0",
     "standard-version": "^5.0.0",
     "supertest": "^4.0.0",
-    "szero": "^1.0.0",
     "tap-spec": "~5.0.0",
     "tape": "~4.10.0",
     "xo": "~0.24.0"
