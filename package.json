@@ -56,6 +56,6 @@
     "xo": "~0.25.3"
   },
   "dependencies": {
-    "overload-protection": "~1.1.0"
+    "overload-protection": "~1.2.0"
   }
 }
