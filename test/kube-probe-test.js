@@ -6,33 +6,27 @@ const supertest = require('supertest');
 const connect = require('connect');
 const probe = require('..');
 
-test('test defaults for readiness', t => {
+test('test defaults for readiness', async t => {
   const app = connect();
   probe(app);
 
-  supertest(app)
-    .get('/api/health/readiness')
-    .expect(200)
-    .then(response => {
-      t.equal(response.text, 'OK', 'should just return OK for the text');
-      t.end();
-    });
+  const response = await supertest(app).get('/api/health/readiness').expect(200);
+
+  t.equal(response.text, 'OK', 'should just return OK for the text');
+  t.end();
 });
 
-test('test defaults for liveness', t => {
+test('test defaults for liveness', async t => {
   const app = connect();
   probe(app);
 
-  supertest(app)
-    .get('/api/health/liveness')
-    .expect(200)
-    .then(response => {
-      t.equal(response.text, 'OK', 'should just return OK for the text');
-      t.end();
-    });
+  const response = await supertest(app).get('/api/health/liveness').expect(200);
+
+  t.equal(response.text, 'OK', 'should just return OK for the text');
+  t.end();
 });
 
-test('test different url and callback for readiness', t => {
+test('test different url and callback for readiness', async t => {
   const app = connect();
   const options = {
     readinessURL: '/different/api/ready',
@@ -43,16 +37,13 @@ test('test different url and callback for readiness', t => {
 
   probe(app, options);
 
-  supertest(app)
-    .get('/different/api/ready')
-    .expect(200)
-    .then(response => {
-      t.equal(response.text, 'Different Callback', 'Different Callback shold be the new text');
-      t.end();
-    });
+  const response = await supertest(app).get('/different/api/ready').expect(200);
+
+  t.equal(response.text, 'Different Callback', 'Different Callback shold be the new text');
+  t.end();
 });
 
-test('test different url and callback for liveness', t => {
+test('test different url and callback for liveness', async t => {
   const app = connect();
   const options = {
     livenessURL: '/different/api/ready',
@@ -63,44 +54,41 @@ test('test different url and callback for liveness', t => {
 
   probe(app, options);
 
-  supertest(app)
-    .get('/different/api/ready')
-    .expect(200)
-    .then(response => {
-      t.equal(response.text, 'Different Callback', 'Different Callback shold be the new text');
-      t.end();
-    });
+  const response = await supertest(app).get('/different/api/ready').expect(200);
+
+  t.equal(response.text, 'Different Callback', 'Different Callback should be the new text');
+  t.end();
 });
 
-test('default content type for readiness endpoint', t => {
+test('default content type for readiness endpoint', async t => {
   t.plan(1);
   const app = connect();
   probe(app);
-  supertest(app)
+
+  const response = await supertest(app)
     .get('/api/health/readiness')
     .expect(200)
-    .expect('Content-Type', /text\/html/)
-    .then(response => {
-      t.strictEqual(response.text, 'OK', 'expected response');
-      t.end();
-    });
+    .expect('Content-Type', /text\/html/);
+
+  t.strictEqual(response.text, 'OK', 'expected response');
+  t.end();
 });
 
-test('default content type for liveness endpoint', t => {
+test('default content type for liveness endpoint', async t => {
   t.plan(1);
   const app = connect();
   probe(app);
-  supertest(app)
+
+  const response = await supertest(app)
     .get('/api/health/liveness')
     .expect(200)
-    .expect('Content-Type', /text\/html/)
-    .then(response => {
-      t.strictEqual(response.text, 'OK', 'expected response');
-      t.end();
-    });
+    .expect('Content-Type', /text\/html/);
+
+  t.strictEqual(response.text, 'OK', 'expected response');
+  t.end();
 });
 
-test('custom content type for liveness endpoint', t => {
+test('custom content type for liveness endpoint', async t => {
   t.plan(1);
   const app = connect();
   probe(app, {
@@ -109,12 +97,12 @@ test('custom content type for liveness endpoint', t => {
       response.end(JSON.stringify({status: 'OK'}));
     }
   });
-  supertest(app)
+
+  const response = await supertest(app)
     .get('/api/health/liveness')
     .expect(200)
-    .expect('Content-Type', /json/)
-    .then(response => {
-      t.strictEqual(response.body.status, 'OK', 'expected response');
-      t.end();
-    });
+    .expect('Content-Type', /json/);
+
+  t.strictEqual(response.body.status, 'OK', 'expected response');
+  t.end();
 });

@@ -26,6 +26,9 @@
     "index.js",
     "LICENSE"
   ],
+  "engines": {
+    "node": ">= 10"
+  },
   "repository": {
     "type": "git",
     "url": "git://github.com/nodeshift/kube-probe.git"
