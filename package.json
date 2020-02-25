@@ -56,7 +56,7 @@
     "supertest": "^4.0.0",
     "tap-spec": "~5.0.0",
     "tape": "~4.13.0",
-    "xo": "~0.26.1"
+    "xo": "~0.27.1"
   },
   "dependencies": {
     "overload-protection": "~1.2.0"
