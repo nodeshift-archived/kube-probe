@@ -1,13 +1,13 @@
-'use strict';
+"use strict";
 
-const protection = require('overload-protection');
+const protection = require("overload-protection");
 
-const READINESS_URL = '/api/health/readiness';
-const LIVENESS_URL = '/api/health/liveness';
+const READINESS_URL = "/api/health/readiness";
+const LIVENESS_URL = "/api/health/liveness";
 
-function defaultResponse (request, response) {
-  response.setHeader('Content-Type', 'text/html');
-  return response.end('OK');
+function defaultResponse(request, response) {
+  response.setHeader("Content-Type", "text/html");
+  return response.end("OK");
 }
 
 /*
@@ -19,19 +19,20 @@ function defaultResponse (request, response) {
   @param {function} [options.livenessCallback] - function to call when the liveness probe is triggered
   @param {object} [options.protectionConfig] - options passed directly to 'overload-protection' module
 */
-module.exports = function (app, options = {}) {
-  const protectCfg = {
-    production: process.env.NODE_ENV === 'production',
-    maxHeapUsedBytes: 0, // Maximum heap used threshold (0 to disable) [default 0]
-    maxRssBytes: 0, // Maximum rss size threshold (0 to disable) [default 0]
-    ...options.protectionConfig
-  };
+module.exports = function(app, options = {}) {
   const readiness = options.readinessURL || READINESS_URL;
   const liveness = options.livenessURL || LIVENESS_URL;
-  const protect = protection('http', protectCfg);
-
-  app.use(readiness, protect);
+  if (process.env.KUBE_PROBE_BYPASS_PROTECTION !== "true") {
+    const protectCfg = {
+      production: process.env.NODE_ENV === "production",
+      maxHeapUsedBytes: 0, // Maximum heap used threshold (0 to disable) [default 0]
+      maxRssBytes: 0, // Maximum rss size threshold (0 to disable) [default 0]
+      ...options.protectionConfig
+    };
+    const protect = protection("http", protectCfg);
+    app.use(readiness, protect);
+    app.use(liveness, protect);
+  }
   app.use(readiness, options.readinessCallback || defaultResponse);
   app.use(liveness, options.livenessCallback || defaultResponse);
-  app.use(liveness, protect);
 };
