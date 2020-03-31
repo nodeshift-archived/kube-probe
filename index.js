@@ -1,13 +1,13 @@
-"use strict";
+'use strict';
 
-const protection = require("overload-protection");
+const protection = require('overload-protection');
 
-const READINESS_URL = "/api/health/readiness";
-const LIVENESS_URL = "/api/health/liveness";
+const READINESS_URL = '/api/health/readiness';
+const LIVENESS_URL = '/api/health/liveness';
 
 function defaultResponse(request, response) {
-  response.setHeader("Content-Type", "text/html");
-  return response.end("OK");
+  response.setHeader('Content-Type', 'text/html');
+  return response.end('OK');
 }
 
 /*
@@ -22,14 +22,14 @@ function defaultResponse(request, response) {
 module.exports = function(app, options = {}) {
   const readiness = options.readinessURL || READINESS_URL;
   const liveness = options.livenessURL || LIVENESS_URL;
-  if (process.env.KUBE_PROBE_BYPASS_PROTECTION !== "true") {
+  if (process.env.KUBE_PROBE_BYPASS_PROTECTION !== 'true') {
     const protectCfg = {
-      production: process.env.NODE_ENV === "production",
+      production: process.env.NODE_ENV === 'production',
       maxHeapUsedBytes: 0, // Maximum heap used threshold (0 to disable) [default 0]
       maxRssBytes: 0, // Maximum rss size threshold (0 to disable) [default 0]
       ...options.protectionConfig
     };
-    const protect = protection("http", protectCfg);
+    const protect = protection('http', protectCfg);
     app.use(readiness, protect);
     app.use(liveness, protect);
   }
