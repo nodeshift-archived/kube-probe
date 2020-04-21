@@ -31,5 +31,5 @@ See: https://github.com/davidmarkclements/overload-protection/
 * options.livenessURL - string - url where the livenessURL probe is located
 * options.readinessCallback - function - function to call when the readiness probe is triggered
 * options.livenessCallback - function - function to call when the liveness probe is triggered
-* options.bypassProtection - boolean - kube-brob will bypass protection and always return 200
+* options.bypassProtection - boolean - kube-probe will bypass protection (defaults to false)
 * options.protectionConfig - object - options passed direction to `overload-protection`
