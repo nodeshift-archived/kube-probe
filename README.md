@@ -33,3 +33,7 @@ See: https://github.com/davidmarkclements/overload-protection/
 * options.livenessCallback - function - function to call when the liveness probe is triggered
 * options.bypassProtection - boolean - kube-probe will bypass protection (defaults to false)
 * options.protectionConfig - object - options passed direction to `overload-protection`
+
+#### Environment Variables
+
+* KUBE_PROBE_BYPASS_PROTECTION - boolean - kube-probe will bypass protection
