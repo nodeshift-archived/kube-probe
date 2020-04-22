@@ -112,7 +112,7 @@ test('bypass kube-probe protection', async t => {
   const app = connect();
 
   probe(app, {
-    bypassProtection: true,
+    bypassProtection: true
   });
 
   const readinessResponse = await supertest(app)
@@ -120,12 +120,12 @@ test('bypass kube-probe protection', async t => {
     .expect(200)
     .expect('Content-Type', /text\/html/);
 
-    const livenessResponse = await supertest(app)
+  const livenessResponse = await supertest(app)
     .get('/api/health/liveness')
     .expect(200)
     .expect('Content-Type', /text\/html/);
 
-    t.strictEqual(readinessResponse.text, 'OK', 'Expected readiness response');
-    t.strictEqual(livenessResponse.text, 'OK', 'Expected liveness response');
-    t.end()
+  t.strictEqual(readinessResponse.text, 'OK', 'Expected readiness response');
+  t.strictEqual(livenessResponse.text, 'OK', 'Expected liveness response');
+  t.end();
 });
