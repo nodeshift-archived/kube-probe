@@ -28,10 +28,16 @@ module.exports = function (app, options = {}) {
   };
   const readiness = options.readinessURL || READINESS_URL;
   const liveness = options.livenessURL || LIVENESS_URL;
-  const protect = protection('http', protectCfg);
 
-  app.use(readiness, protect);
+  // Check if kube-probe's protection option is disabled
+  const bypassProtection = options.bypassProtection || process.env.KUBE_PROBE_BYPASS_PROTECTION === 'true';
+
+  if (!bypassProtection) {
+    const protect = protection('http', protectCfg);
+    app.use(readiness, protect);
+    app.use(liveness, protect);
+  }
+
   app.use(readiness, options.readinessCallback || defaultResponse);
   app.use(liveness, options.livenessCallback || defaultResponse);
-  app.use(liveness, protect);
 };

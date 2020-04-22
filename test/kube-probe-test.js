@@ -106,3 +106,26 @@ test('custom content type for liveness endpoint', async t => {
   t.strictEqual(response.body.status, 'OK', 'expected response');
   t.end();
 });
+
+test('bypass kube-probe protection', async t => {
+  t.plan(2);
+  const app = connect();
+
+  probe(app, {
+    bypassProtection: true
+  });
+
+  const readinessResponse = await supertest(app)
+    .get('/api/health/readiness')
+    .expect(200)
+    .expect('Content-Type', /text\/html/);
+
+  const livenessResponse = await supertest(app)
+    .get('/api/health/liveness')
+    .expect(200)
+    .expect('Content-Type', /text\/html/);
+
+  t.strictEqual(readinessResponse.text, 'OK', 'Expected readiness response');
+  t.strictEqual(livenessResponse.text, 'OK', 'Expected liveness response');
+  t.end();
+});
