@@ -1,11 +1,12 @@
 language: node_js
 
 node_js:
-  - lts/* 
+  - lts/*
   - 10
+  - 14
 
 script:
-   - npm run ci
+  - npm run ci
 
 branches:
   only:
