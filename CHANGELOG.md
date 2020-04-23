@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.5.0](https://github.com/nodeshift/kube-probe/compare/v0.4.0...v0.5.0) (2020-04-23)
+
+
+### Features
+
+* Option to bypass overload protection when needed ([#93](https://github.com/nodeshift/kube-probe/issues/93)) ([93ee8e5](https://github.com/nodeshift/kube-probe/commit/93ee8e55724d1987f873fcf93022d5eabc520369)), closes [#89](https://github.com/nodeshift/kube-probe/issues/89)
+
+
+### Bug Fixes
+
+* upgrade xo from 0.28.0 to 0.28.1 ([#92](https://github.com/nodeshift/kube-probe/issues/92)) ([c5f663d](https://github.com/nodeshift/kube-probe/commit/c5f663d115feff636d8a275fa33dba5400d1b317))
+
 ## [0.4.0](https://github.com/nodeshift/kube-probe/compare/v0.3.3...v0.4.0) (2020-02-07)
 
 
