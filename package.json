@@ -23,9 +23,7 @@
     }
   },
   "files": [
-    "package.json",
-    "index.js",
-    "LICENSE"
+    "index.js"
   ],
   "engines": {
     "node": ">= 10"
