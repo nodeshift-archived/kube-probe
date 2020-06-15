@@ -54,7 +54,7 @@
     "standard-version": "^8.0.0",
     "supertest": "^4.0.0",
     "tap-spec": "~5.0.0",
-    "tape": "~4.13.0",
+    "tape": "~5.0.1",
     "xo": "~0.30.0"
   },
   "dependencies": {
