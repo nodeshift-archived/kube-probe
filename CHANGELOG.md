@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.0.0](https://github.com/nodeshift/kube-probe/compare/v0.5.0...v1.0.0) (2020-09-10)
+
+
+### Bug Fixes
+
+* [Snyk] Upgrade xo from 0.28.1 to 0.28.2 ([#96](https://github.com/nodeshift/kube-probe/issues/96)) ([58b97a0](https://github.com/nodeshift/kube-probe/commit/58b97a0370fc02ca61faa785d40eeb203488c757))
+* upgrade standard-version from 8.0.1 to 8.0.2 ([#117](https://github.com/nodeshift/kube-probe/issues/117)) ([39a1d98](https://github.com/nodeshift/kube-probe/commit/39a1d989bfa5138347dfa01b5ab59e79ad82d1b7))
+* upgrade xo from 0.32.1 to 0.33.0 ([#119](https://github.com/nodeshift/kube-probe/issues/119)) ([2d6352b](https://github.com/nodeshift/kube-probe/commit/2d6352b70b140818694bc77dac9f7fa42891f139))
+
 ## [0.5.0](https://github.com/nodeshift/kube-probe/compare/v0.4.0...v0.5.0) (2020-04-23)
 
 
