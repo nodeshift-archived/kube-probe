@@ -1,5 +1,5 @@
 [![Build Status](https://travis-ci.org/nodeshift/kube-probe.svg?branch=master)](https://travis-ci.org/nodeshift/kube-probe) [![Coverage Status](https://coveralls.io/repos/github/nodeshift/kube-probe/badge.svg?branch=master)](https://coveralls.io/github/nodeshift/kube-probe?branch=master)
-
+[![Greenkeeper badge](https://badges.greenkeeper.io/nodeshift/kube-probe.svg)](https://greenkeeper.io/)
 Connect middleware that sets up generic liveness and readiness probes for OpenShift/Kubernetes
 
 Example Usage:
@@ -21,8 +21,6 @@ may be passed as `options.protectionConfig`.
 See: https://github.com/davidmarkclements/overload-protection/
 
 #### Parameters
-
-[![Greenkeeper badge](https://badges.greenkeeper.io/nodeshift/kube-probe.svg)](https://greenkeeper.io/)
 
 * app - an instance of a connect-based framework (e.g. express.js) - required
 
