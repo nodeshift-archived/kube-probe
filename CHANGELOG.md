@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.1](https://www.github.com/nodeshift/kube-probe/compare/v1.0.0...v1.0.1) (2020-10-14)
+
+
+### Bug Fixes
+
+* upgrade xo from 0.33.0 to 0.33.1 ([#122](https://www.github.com/nodeshift/kube-probe/issues/122)) ([1fbd76e](https://www.github.com/nodeshift/kube-probe/commit/1fbd76ebcf806b34c1c90ad4fb622ce8c9e9a03c))
+
 ## [1.0.0](https://github.com/nodeshift/kube-probe/compare/v0.5.0...v1.0.0) (2020-09-10)
 
 
