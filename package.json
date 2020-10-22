@@ -6,21 +6,12 @@
   "license": "Apache-2.0",
   "scripts": {
     "test": "tape test/*.js | tap-spec",
-    "lint": "xo",
+    "lint": "eslint test/*-test.js index.js",
     "coverage": "nyc npm test",
     "coverage:html": "nyc npm test && nyc report --reporter=html",
     "coveralls": "nyc npm test && nyc report && if [ $COVERALLS_REPO_TOKEN'' != '' ] ; then nyc report --reporter=text-lcov | coveralls; fi",
     "ci": "npm run lint && npm run coveralls",
     "release": "standard-version"
-  },
-  "xo": {
-    "space": 2,
-    "rules": {
-      "space-before-function-paren": [
-        "error",
-        "always"
-      ]
-    }
   },
   "files": [
     "index.js"
@@ -50,12 +41,18 @@
   "devDependencies": {
     "connect": "~3.7.0",
     "coveralls": "^3.1.0",
+    "eslint": "~7.11.0",
+    "eslint-config-semistandard": "~15.0.1",
+    "eslint-config-standard": "~14.1.1",
+    "eslint-plugin-import": "~2.22.1",
+    "eslint-plugin-node": "~11.1.0",
+    "eslint-plugin-promise": "~4.2.1",
+    "eslint-plugin-standard": "~4.0.1",
     "nyc": "~15.1.0",
     "standard-version": "^9.0.0",
     "supertest": "^4.0.0",
     "tap-spec": "~5.0.0",
-    "tape": "~5.0.1",
-    "xo": "~0.33.1"
+    "tape": "~5.0.1"
   },
   "dependencies": {
     "overload-protection": "~1.2.0"
