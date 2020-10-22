@@ -94,7 +94,7 @@ test('custom content type for liveness endpoint', async t => {
   probe(app, {
     livenessCallback: (request, response) => {
       response.setHeader('Content-Type', 'application/json');
-      response.end(JSON.stringify({status: 'OK'}));
+      response.end(JSON.stringify({ status: 'OK' }));
     }
   });
 
