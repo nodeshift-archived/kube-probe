@@ -24,7 +24,9 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-# Install Dependecies
+# Install Dependencies
     - run: npm ci
 # Run the linter and tests and coverage
     - run: npm run ci
+# Run package support validation
+    - run: npx @pkgjs/support validate

@@ -56,5 +56,6 @@
   },
   "dependencies": {
     "overload-protection": "~1.2.0"
-  }
+  },
+  "support": true
 }
