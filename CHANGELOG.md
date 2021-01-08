@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.2](https://www.github.com/nodeshift/kube-probe/compare/v1.0.1...v1.0.2) (2021-01-04)
+
+
+### Bug Fixes
+
+* upgrade eslint from 7.11.0 to 7.12.0 ([#129](https://www.github.com/nodeshift/kube-probe/issues/129)) ([2c99fd5](https://www.github.com/nodeshift/kube-probe/commit/2c99fd5cccd3eda2c257100c92c0413f422b834c))
+* upgrade eslint from 7.12.0 to 7.12.1 ([#131](https://www.github.com/nodeshift/kube-probe/issues/131)) ([a92a8ac](https://www.github.com/nodeshift/kube-probe/commit/a92a8aca8f59965af4f87d204462af61b1ad3743))
+* upgrade eslint from 7.12.1 to 7.13.0 ([#132](https://www.github.com/nodeshift/kube-probe/issues/132)) ([8b3a586](https://www.github.com/nodeshift/kube-probe/commit/8b3a5865bab2403bc635ccd3259147c25328080c))
+* upgrade eslint from 7.13.0 to 7.14.0 ([#135](https://www.github.com/nodeshift/kube-probe/issues/135)) ([213f79b](https://www.github.com/nodeshift/kube-probe/commit/213f79b600d421d98a6fddb5fc5bd18c419c8269))
+* upgrade eslint from 7.14.0 to 7.15.0 ([#136](https://www.github.com/nodeshift/kube-probe/issues/136)) ([7141be0](https://www.github.com/nodeshift/kube-probe/commit/7141be0e87954811e2f971055d3ba4147825cc82))
+* upgrade eslint-plugin-standard from 4.0.2 to 4.1.0 ([#133](https://www.github.com/nodeshift/kube-probe/issues/133)) ([4a0b35d](https://www.github.com/nodeshift/kube-probe/commit/4a0b35d9203a5f0e019aa94a6ba5c031627b09f3))
+
 ### [1.0.1](https://www.github.com/nodeshift/kube-probe/compare/v1.0.0...v1.0.1) (2020-10-14)
 
 
