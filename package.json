@@ -52,7 +52,7 @@
     "standard-version": "^9.1.0",
     "supertest": "^4.0.0",
     "tap-spec": "~5.0.0",
-    "tape": "~5.0.1"
+    "tape": "~5.1.0"
   },
   "dependencies": {
     "overload-protection": "~1.2.0"
