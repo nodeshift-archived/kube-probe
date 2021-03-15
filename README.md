@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/nodeshift/kube-probe.svg?branch=master)](https://travis-ci.org/nodeshift/kube-probe) [![Coverage Status](https://coveralls.io/repos/github/nodeshift/kube-probe/badge.svg?branch=master)](https://coveralls.io/github/nodeshift/kube-probe?branch=master)
+[![Build Status](https://travis-ci.org/nodeshift/kube-probe.svg?branch=main)](https://travis-ci.org/nodeshift/kube-probe) [![Coverage Status](https://coveralls.io/repos/github/nodeshift/kube-probe/badge.svg?branch=main)](https://coveralls.io/github/nodeshift/kube-probe?branch=main)
 [![Greenkeeper badge](https://badges.greenkeeper.io/nodeshift/kube-probe.svg)](https://greenkeeper.io/)
 Connect middleware that sets up generic liveness and readiness probes for OpenShift/Kubernetes
 
