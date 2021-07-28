@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.3](https://www.github.com/nodeshift/kube-probe/compare/v1.0.2...v1.0.3) (2021-07-28)
+
+
+### Bug Fixes
+
+* upgrade eslint from 7.15.0 to 7.16.0 ([#137](https://www.github.com/nodeshift/kube-probe/issues/137)) ([3d328ff](https://www.github.com/nodeshift/kube-probe/commit/3d328ff5e36c5a0222f2d0a576f45505d4e69761))
+* upgrade eslint from 7.16.0 to 7.17.0 ([#141](https://www.github.com/nodeshift/kube-probe/issues/141)) ([84ff6a6](https://www.github.com/nodeshift/kube-probe/commit/84ff6a681b7e68709d88ef713f6c35177da8c268))
+* upgrade eslint from 7.17.0 to 7.19.0 ([#144](https://www.github.com/nodeshift/kube-probe/issues/144)) ([f22980d](https://www.github.com/nodeshift/kube-probe/commit/f22980d5a8b7fc0023eaa81bb2efc99c2f478e87))
+* upgrade eslint from 7.19.0 to 7.20.0 ([#145](https://www.github.com/nodeshift/kube-probe/issues/145)) ([4a2a83f](https://www.github.com/nodeshift/kube-probe/commit/4a2a83fdeb6cc661e35e3dff69ce680f07f0e965))
+* upgrade eslint-plugin-promise from 4.2.1 to 4.3.1 ([#143](https://www.github.com/nodeshift/kube-probe/issues/143)) ([bef0d8c](https://www.github.com/nodeshift/kube-probe/commit/bef0d8c66db9176a5c5a38bfb23efdd0890aba7d))
+* upgrade standard-version from 9.0.0 to 9.1.0 ([#140](https://www.github.com/nodeshift/kube-probe/issues/140)) ([985b9cd](https://www.github.com/nodeshift/kube-probe/commit/985b9cd40b3714983c54fd6a4064f431bfc6d778))
+* upgrade standard-version from 9.1.0 to 9.1.1 ([#146](https://www.github.com/nodeshift/kube-probe/issues/146)) ([534efdc](https://www.github.com/nodeshift/kube-probe/commit/534efdc209e0a613311defcb01168841bd193656))
+* upgrade tape from 5.0.1 to 5.1.0 ([#139](https://www.github.com/nodeshift/kube-probe/issues/139)) ([011629c](https://www.github.com/nodeshift/kube-probe/commit/011629c5f025a12e525563540ad3ae37c4c51513))
+* upgrade tape from 5.1.0 to 5.1.1 ([#142](https://www.github.com/nodeshift/kube-probe/issues/142)) ([25c1a98](https://www.github.com/nodeshift/kube-probe/commit/25c1a98ae883599ab38fa9ff62e34876b469945a))
+* upgrade tape from 5.1.1 to 5.2.0 ([#147](https://www.github.com/nodeshift/kube-probe/issues/147)) ([f934b39](https://www.github.com/nodeshift/kube-probe/commit/f934b39aad705e9af5eb103fca4ded4991c743f0))
+
 ### [1.0.2](https://www.github.com/nodeshift/kube-probe/compare/v1.0.1...v1.0.2) (2021-01-04)
 
 
